@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DogAPI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="600">
     <Grid>
-        <!--test-->
+        <ComboBox x:Name="raceBox" HorizontalAlignment="Left" Margin="464,389,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="raceSoeg" HorizontalAlignment="Left" Height="23" Margin="10,388,0,0" TextWrapping="Wrap" Text="Søg efter race" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="soegKnap" Content="Søg" HorizontalAlignment="Left" Margin="130,391,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image x:Name="doggoPic" HorizontalAlignment="Left" Height="185" Margin="103,90,0,0" VerticalAlignment="Top" Width="391"/>
     </Grid>
 </Window>

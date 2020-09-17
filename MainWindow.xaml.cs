@@ -24,5 +24,12 @@ namespace DogAPI
         {
             InitializeComponent();
         }
+
+        private void raceSoeg_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            TextBox txtBox = sender as TextBox;
+            if (txtBox.Text == "Søg efter race")
+                txtBox.Text = string.Empty;
+        }
     }
 }

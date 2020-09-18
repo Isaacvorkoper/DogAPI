@@ -7,16 +7,37 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="600" ResizeMode="CanMinimize">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="311*"/>
+            <RowDefinition Height="109*"/>
+        </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="YellowGreen" Offset="0"/>
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <ComboBox x:Name="raceBox" IsEditable="True" IsReadOnly="True" Text="Populære racer" HorizontalAlignment="Left" Margin="464,388,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
-        <TextBox x:Name="raceSoeg" HorizontalAlignment="Left" Height="23" Margin="10,388,0,0" TextWrapping="Wrap" 
-                 Text="Søg efter race" TextAlignment="Center" VerticalAlignment="Top" Width="120" GotKeyboardFocus="raceSoeg_GotKeyboardFocus"/>
-        <Button x:Name="soegKnap" Content="Søg" HorizontalAlignment="Left" Margin="130,388,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
-        <Image x:Name="doggoPic" Source="C:\Users\isaac\OneDrive\Billeder\TestHund.jpg" Margin="91,70,0,100" HorizontalAlignment="Left" Width="422"/>
+        <!--Race liste-->
+        <ComboBox x:Name="raceBox" SelectionChanged="raceBox_SelectionChanged" IsEditable="True" IsReadOnly="True" Text="Populære racer" HorizontalAlignment="Left" 
+                  Margin="452,75.533,0,0" VerticalAlignment="Top" Width="120" Height="23" Grid.Row="1"/>
+        <!--Race søg-->
+        <TextBox x:Name="raceSoeg" HorizontalAlignment="Left" Height="23" Margin="10,76.533,0,0" TextWrapping="Wrap" 
+                 Text="Søg efter race" TextAlignment="Center" VerticalAlignment="Top" Width="120" GotKeyboardFocus="raceSoeg_GotKeyboardFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20,0,0,20"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <!--Søg knap-->
+        <Button x:Name="soegKnap" Click='Soeg_Click' Content="Søg" HorizontalAlignment="Left" Margin="130,76.533,0,0" VerticalAlignment="Top" Width="78" Height="23" Grid.Row="1">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="0,20,20,0"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <!--Billede-->
+        <Image x:Name="doggoPic" Source="C:\Users\isaac\OneDrive\Billeder\TestHund.jpg" Margin="91,70,0,100" HorizontalAlignment="Left" Width="422" Grid.RowSpan="2"/>
     </Grid>
 </Window>

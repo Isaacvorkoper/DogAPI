@@ -23,6 +23,11 @@ namespace DogAPI
         public MainWindow()
         {
             InitializeComponent();
+            raceBox.Items.Add("finnish-lapphund");
+
+            
+
+           
         }
 
         private void raceSoeg_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
@@ -30,6 +35,22 @@ namespace DogAPI
             TextBox txtBox = sender as TextBox;
             if (txtBox.Text == "Søg efter race")
                 txtBox.Text = string.Empty;
+        }
+
+        private void Soeg_Click(object sender, RoutedEventArgs e)
+        {
+            string race = raceSoeg.Text;
+            string apistring = "https/fesfesfe/breed/" + raceSoeg.Text + "";
+        }
+
+        private void raceBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string apistring = "https://dog.ceo/api/breed/"+ raceBox.SelectedItem + "/images/random";
+        }
+
+        private void hentBillede(string API)
+        {
+
         }
     }
 }

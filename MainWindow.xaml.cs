@@ -26,11 +26,14 @@ namespace DogAPI
     public partial class MainWindow : Window
     {
         public MainWindow()
-        {
+        { //comboBox racer
             InitializeComponent();
             raceBox.Items.Add("germanshepherd");
             raceBox.Items.Add("chow");
-
+            raceBox.Items.Add("husky");
+            raceBox.Items.Add("cotondetulear");
+            raceBox.Items.Add("labrador");
+            raceBox.Items.Add("bulldog");
         }
 
         //Sletter start teksten når den bliver trykket på
@@ -57,7 +60,7 @@ namespace DogAPI
             }
         }
 
-        //Henter billede af racen valgt på listen
+        //Fortæller racen valgt på listen
         private void raceBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string apistring = "https://dog.ceo/api/breed/"+ raceBox.SelectedItem + "/images/random";
@@ -72,6 +75,7 @@ namespace DogAPI
 
         }
 
+        //Henter billeder fra API'en
         private string hentBillede(string API)
         {
             try

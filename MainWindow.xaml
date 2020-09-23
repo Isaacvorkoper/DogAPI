@@ -38,6 +38,6 @@
             </Button.Resources>
         </Button>
         <!--Billede-->
-        <Image x:Name="doggoPic" Margin="10,10,0,78" HorizontalAlignment="Left" Width="564" Grid.RowSpan="2" Stretch="Fill"/>
+        <Image x:Name="doggoPic" Margin="16,10,0,78" HorizontalAlignment="Left" Width="564" Grid.RowSpan="2" Stretch="Fill"/>
     </Grid>
 </Window>

@@ -75,7 +75,7 @@ namespace DogAPI
 
         }
 
-        //Henter billeder fra API'en
+        //Laver JSON stringen om til billeder
         private string hentBillede(string API)
         {
             try
@@ -91,8 +91,7 @@ namespace DogAPI
             return null;
         }
 
-
-
+        //Henter JSON stringen fra API
         class BilledData
         {
             public string message { get; set; }

@@ -60,7 +60,7 @@ namespace DogAPI
             }
         }
 
-        //Fortæller racen valgt på listen
+        //Fortæller hvilken race valgt på listen
         private void raceBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string apistring = "https://dog.ceo/api/breed/"+ raceBox.SelectedItem + "/images/random";
@@ -80,10 +80,9 @@ namespace DogAPI
         {
             try
             {
-                var Json = new WebClient().DownloadString(API);
-                string[] temp = Json.Split('"');
-                temp[3] = temp[3].Replace(@"\", "");
-                return temp[3];
+                string Json = new WebClient().DownloadString(API);
+                BilledData result = JsonConvert.DeserializeObject<BilledData>(Json);
+                return result.message;
             }
             catch (Exception ex)
             {
@@ -91,5 +90,13 @@ namespace DogAPI
             }
             return null;
         }
+
+
+
+        class BilledData
+        {
+            public string message { get; set; }
+        }
+
     }
 }
